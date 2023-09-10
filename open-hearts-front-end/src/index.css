@@ -13,9 +13,14 @@ code {
 }
 
 .navbar {
-  background-color: #340e7c;
+  /* background-color: #340e7c; */
+
+  background-image: linear-gradient(#340e7c, lightpink);
   color: lightgrey;
   font-size: 2rem;
+  height: 20vh;
+  border-radius:40px 100px 40px 100px;
+
 }
 
 .navbar ul {
