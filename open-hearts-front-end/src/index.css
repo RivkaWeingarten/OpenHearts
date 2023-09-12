@@ -13,14 +13,11 @@ code {
 }
 
 .navbar {
-  /* background-color: #340e7c; */
-
-  background-image: linear-gradient(#340e7c, lightpink);
+  background-image: linear-gradient(#340e7c, rgb(81, 20, 155));
   color: lightgrey;
   font-size: 2rem;
-  height: 20vh;
-  border-radius:40px 100px 40px 100px;
-
+  height: 10vh;
+  border-radius:40px 40px 300px 300px;
 }
 
 .navbar ul {
