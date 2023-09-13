@@ -5,7 +5,7 @@ function Navbar() {
       <ul>
         <li>
           <a href="" rel="Home Page">
-            {" "}
+        
             Home
           </a>
         </li>
