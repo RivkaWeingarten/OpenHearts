@@ -1,3 +1,4 @@
+import "../families.css"
 const families = [
   {
     name: "jane Doe",
@@ -46,19 +47,26 @@ const families = [
 function Families() {
   let familiesFormatted = families.map((family) => {
     return (
-      <div>
+      <div className="show-families">
+       <div className="family-info">
         <h2>
           <a href={family.ID}>{family.alias}</a>
+          <img src="https://th.bing.com/th?id=OIP.IQehT3nzWIi7bEck-XyvdQHaFH&w=300&h=207&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"></img>
         </h2>
+        </div>
+       <div className="description-family">
         <p>
-          Monthlyn Budget: {family.monthlyBudget}
-          Groceries:{family.groceries}
-          Rent:{family.rent}
-          Transportation:{family.transportation}
-          Other:{family.other}
+         <strong>    Monthlyn Budget: ${family.monthlyBudget}</strong>
+          <ul>
+          <li>Groceries:${family.groceries}</li>
+          <li>Rent:${family.rent}</li>
+          <li>Transportation:${family.transportation}</li>
+         <li> Other:${family.other}</li>
+          </ul>
         </p>
         <p>{family.situation}</p>
         <button>Donate Now</button>
+        </div>
       </div>
     );
   });
@@ -66,7 +74,9 @@ function Families() {
   return (
     <main>
       <h1>Our Families In Need</h1>
+      <div className="families-container">
      {familiesFormatted}
+     </div>
     </main>
   );
 }
