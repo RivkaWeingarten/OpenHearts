@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 let familySchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: false },
   pic: {
     type: String,
     default:
       "https://th.bing.com/th?id=OIP.IQehT3nzWIi7bEck-XyvdQHaFH&w=300&h=207&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
   },
-  alias: { type: String, required: true },
-  address1: { type: String, required: true },
+  alias: { type: String, required: false },
+  address1: { type: String, required: false },
   address2: { type: String, required: false },
   city: { type: String, default: "Anytown" },
   state: { type: String, default: "USA" },

@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/families" element={<Families />} />
+          <Route path="/donations" element={<Donations />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
