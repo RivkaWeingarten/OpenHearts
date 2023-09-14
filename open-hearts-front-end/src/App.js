@@ -1,3 +1,4 @@
+import React from "react";
 import "./index.css";
 import "./families.css";
 import "./App.css";
@@ -18,6 +19,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }
