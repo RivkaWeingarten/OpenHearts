@@ -1,21 +1,31 @@
+
 import React from "react";
+
+
 function Navbar() {
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <a href="" rel="Home Page">
-            {" "}
+
+          <a href="/" rel="Home Page">
+        
+
             Home
           </a>
         </li>
         <li>
-          <a href="" rel="Families">
+
+
+          <a href="/families" rel="Families">
+
             Families
           </a>
         </li>
         <li>
-          <a href="" rel="Donate">
+
+          <a href="/donate" rel="Donate">
+
             Donate
           </a>
         </li>
