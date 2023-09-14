@@ -1,13 +1,20 @@
 import React from "react";
 
-
-
-function Home() {
+function AddFamily() {
   return (
     <div>
       <div className="aboutUs">
-        <h1>About Us</h1>
-        <img className='family' src="https://img.freepik.com/free-vector/big-family-meeting_74855-5220.jpg?" alt='illustration of family'></img>
+        <nav className='edit'> 
+            <ul>
+             <li>Add </li>
+             <li>Remove </li>
+            </ul>
+        </nav>
+        <img
+          className="family"
+          src="https://img.freepik.com/free-vector/big-family-meeting_74855-5220.jpg?"
+          alt="illustration of family"
+        ></img>
         <p>
           We are a community organization with a mission to aid families
           struggling and in need of financial assistance. Our philosphy focusus
@@ -19,7 +26,7 @@ function Home() {
           families and make your contributions.
         </p>
       </div>
-      <button className="explore-button"  >
+      <button className="explore-button">
         <a href="/families" rel="explore button">
           Get Involved
         </a>
@@ -27,4 +34,4 @@ function Home() {
     </div>
   );
 }
-export default Home
+export default Home;
