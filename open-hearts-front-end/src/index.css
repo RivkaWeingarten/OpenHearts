@@ -18,15 +18,19 @@ code {
   font-size: 2rem;
   height: 10vh;
   border-radius: 40px 40px 300px 300px;
+
 }
 
 .navbar ul {
   list-style-type: none;
   margin: 0;
+
 }
 
 .navbar li {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 25px;
 }
 
