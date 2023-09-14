@@ -56,7 +56,7 @@ function Families() {
         </div>
        <div className="description-family">
         <p>
-         <strong>    Monthlyn Budget: ${family.monthlyBudget}</strong>
+         <strong>    Monthly Budget: ${family.monthlyBudget}</strong>
           <ul>
           <li>Groceries:${family.groceries}</li>
           <li>Rent:${family.rent}</li>

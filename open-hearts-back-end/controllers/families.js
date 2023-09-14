@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  console.log(req.body);
   db.Family.create(req.body)
     .then((createdFamily) => {
       res.json(createdFamily);
