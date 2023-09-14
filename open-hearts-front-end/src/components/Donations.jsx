@@ -5,7 +5,7 @@ import CreditCardForm from "./CreditCardForm";
 function Donations () {
 return (
     <div>
-    <h1>Thank you for supporting our familes.</h1>
+    <h1>Thank you for supporting our familes!</h1>
 
     <CreditCardForm />
  
