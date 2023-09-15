@@ -3,23 +3,19 @@ const db = require("../models");
 require("dotenv").config();
 // const families = require("../models/family_model.js");
 
-// router.get("/", (req, res) => {
-//     db.Family.find()
-//       .populate("donations")
-//       .then((families) => {
-//         res.render("families/index", { families });
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         res.render("error404");
-//       });
-//   });
-
+// show all families
 router.get("/", async (req, res) => {
-  const families = await db.Family.find();
-  res.json(families);
+  const families = await db.Family.find()
+    .populate("donations")
+    .then((families) => {
+      res.json(families);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "An error occurred" });
+    });
 });
-
+// 'ADD family ROUTE'
 router.post("/", (req, res) => {
   console.log(req.body);
   db.Family.create(req.body)
@@ -32,15 +28,78 @@ router.post("/", (req, res) => {
     });
 });
 
-// router.post("/", (req, res) => {
-//   db.Family.create(req.body)
-//     .then((createdFamily) => {
-//       res.json(createdFamily);
-//     })
-//     .catch((err) => {
-//       console.error("Error:", err);
-//       res.status(500).json({ error: "An error occurred" });
-//     });
-// });
+//show single family
+
+router.get("/:id", (req, res) => {
+  db.Family.findById(req.params.id)
+    .populate("donations")
+    .then((family) => {
+      console.log(family.donations);
+      res.json(family);
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.status(500).json({ error: "An error occurred" });
+    });
+});
+//Edit Family Route
+router.put("/:id", (req, res) => {
+  db.Family.findByIdAndUpdate(req.params.id, req.body)
+    .then((family) => {
+      res.json(family);
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.status(500).json({ error: "An error occurred" });
+    });
+});
+
+// delete family
+
+router.delete("/:id", (req, res) => {
+  db.Family.findByIdAndDelete(req.params.id)
+    .then((family) => {
+      res.json(family.name + " deleted");
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.status(500).json({ error: "An error occurred" });
+    });
+});
+
+// add donation
+
+router.post("/:id/donation", (req, res) => {
+  db.Family.findById(req.params.id).then((family) => {
+    db.Donation.create(req.body)
+      .then((donation) => {
+        family.donations.push(donation.id);
+        family.save().then(() => {
+          res.json(donation);
+        });
+      })
+      .catch((err) => {
+        console.log("err", err);
+        res.render("error404");
+      })
+      .catch((err) => {
+        console.log("err", err);
+        res.render("error404");
+      });
+  });
+});
+
+//delete donation
+
+router.delete("/:id/donation/:donationId", (req, res) => {
+  db.Donation.findByIdAndDelete(req.params.donationId)
+    .then((donation) => {
+      res.json(donation.donor + donation.donationAmount + " deleted");
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.render("error404");
+    });
+});
 
 module.exports = router;

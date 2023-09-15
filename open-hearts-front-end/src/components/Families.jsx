@@ -64,7 +64,7 @@ function Families() {
         <div className="family-info">
           <h2>
             <a href={family.id}>{family.name}</a>
-            <img src="https://th.bing.com/th?id=OIP.IQehT3nzWIi7bEck-XyvdQHaFH&w=300&h=207&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"></img>
+            <img src={family.pic}></img>
           </h2>
         </div>
         <div className="description-family">
@@ -73,12 +73,17 @@ function Families() {
             <ul>
               <li>Groceries:${family.food}</li>
               <li>Rent:${family.rent}</li>
-              <li>Transportation:${family.utilityBills}</li>
+              <li>Utilities:${family.utilityBills}</li>
               <li> Other:${family.other}</li>
             </ul>
           </p>
           <p>{family.moreInfo}</p>
-          <button>Donate Now</button>
+        
+          <button>
+          <a href={`/families/${family._id}/edit`} rel="donate button">
+          Donate Now 
+        </a>
+          </button>
         </div>
       </div>
     );

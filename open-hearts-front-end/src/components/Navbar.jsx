@@ -24,6 +24,14 @@ function Navbar() {
         </li>
         <li>
 
+
+          <a href="/families/new" rel="Add Family">
+
+           Add Family
+          </a>
+        </li>
+        <li>
+
           <a href="/donate" rel="Donate">
 
             Donate
