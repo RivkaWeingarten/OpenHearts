@@ -5,7 +5,7 @@ function Home() {
     <div>
       <div className="aboutUs">
         <h1>About Us</h1>
-        <img className='family' src="https://img.freepik.com/free-vector/big-family-meeting_74855-5220.jpg?" alt='illustration of family'></img>
+        <img className='family'  src="https://img.freepik.com/free-vector/big-family-meeting_74855-5220.jpg?" alt='illustration of family'></img>
         <p>
           We are a community organization with a mission to aid families
           struggling and in need of financial assistance. Our philosphy focusus
