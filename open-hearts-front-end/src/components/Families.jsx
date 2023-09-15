@@ -1,4 +1,6 @@
 import "../families.css"
+import { Link } from 'react-router-dom';
+
 const families = [
   {
     name: "jane Doe",
@@ -65,7 +67,9 @@ function Families() {
           </ul>
         </p>
         <p>{family.situation}</p>
+        <Link to={`/family/${family.ID}`}>
         <button>Donate Now</button>
+        </Link>
         </div>
       </div>
     );
