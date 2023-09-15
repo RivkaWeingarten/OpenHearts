@@ -17,8 +17,8 @@ function Home() {
           families and make your contributions.
         </p>
       </div>
-      <button className="explore-button" >
-        <a href="" rel="explore button">
+      <button className="explore-button"  >
+        <a href="/families" rel="explore button">
           Get Involved
         </a>
       </button>
