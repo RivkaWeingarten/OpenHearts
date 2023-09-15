@@ -65,7 +65,7 @@ function AddFamily() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="pic">Place Picture</label>
+          <label htmlFor="pic">Picture</label>
           <input
             value={family.pic}
             onChange={(e) => setFamily({ ...family, pic: e.target.value })}

@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
     });
 });
 
-//show single family
+//display a single family
 
 router.get("/:id", (req, res) => {
   db.Family.findById(req.params.id)
