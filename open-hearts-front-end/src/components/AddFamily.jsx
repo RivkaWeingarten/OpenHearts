@@ -174,7 +174,7 @@ function AddFamily() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="monthlyBudget">Monthly Budget</label>
+          <label htmlFor="monthlyBudget">Monthly Expenses</label>
           <input
             value={family.monthlyBudget}
             onChange={(e) =>
@@ -188,7 +188,7 @@ function AddFamily() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="food">Food Budget</label>
+          <label htmlFor="food">Food Expense</label>
           <input
             value={family.food}
             onChange={(e) => setFamily({ ...family, food: e.target.value })}
@@ -200,7 +200,7 @@ function AddFamily() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="rent">Rent Budget</label>
+          <label htmlFor="rent">Rent Expense</label>
           <input
             value={family.rent}
             onChange={(e) => setFamily({ ...family, rent: e.target.value })}
@@ -212,7 +212,7 @@ function AddFamily() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="utilityBills"> Budget</label>
+          <label htmlFor="utilityBills"> Utilities Expenses</label>
           <input
             value={family.utilityBills}
             onChange={(e) =>
@@ -226,7 +226,7 @@ function AddFamily() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="other"> Budget</label>
+          <label htmlFor="other"> Other Expenses</label>
           <input
             value={family.other}
             onChange={(e) => setFamily({ ...family, other: e.target.value })}

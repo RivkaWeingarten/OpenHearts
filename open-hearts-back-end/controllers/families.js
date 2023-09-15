@@ -80,11 +80,11 @@ router.post("/:id/donation", (req, res) => {
       })
       .catch((err) => {
         console.log("err", err);
-        res.render("error404");
+        res.status(500).json({ error: "An error occurred" });
       })
       .catch((err) => {
         console.log("err", err);
-        res.render("error404");
+        res.status(500).json({ error: "An error occurred" });
       });
   });
 });
@@ -98,7 +98,7 @@ router.delete("/:id/donation/:donationId", (req, res) => {
     })
     .catch((err) => {
       console.log("err", err);
-      res.render("error404");
+      res.status(500).json({ error: "An error occurred" });
     });
 });
 
