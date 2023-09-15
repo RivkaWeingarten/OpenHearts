@@ -63,7 +63,7 @@ function Families() {
       <div className="show-families">
         <div className="family-info">
           <h2>
-            <a href={family.id}>{family.name}</a>
+            <a href={family._id}>{family.name}</a>
             <img src={family.pic}></img>
           </h2>
         </div>
@@ -80,7 +80,7 @@ function Families() {
           <p>{family.moreInfo}</p>
         
           <button>
-          <a href={`/families/${family._id}/edit`} rel="donate button">
+          <a href={`/families/${family._id}`} rel="donate button">
           Donate Now 
         </a>
           </button>
