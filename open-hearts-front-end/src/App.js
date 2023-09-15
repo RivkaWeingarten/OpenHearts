@@ -7,6 +7,8 @@ import Families from "./components/Families";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Error404 from "./components/Error404";
+import Donations from './components/Donations';
+import AddFamily from './components/AddFamily'
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,7 @@ function App() {
           <Route path="/families" element={<Families />} />
           <Route path="/donations" element={<Donations />} />
           <Route path="*" element={<Error404 />} />
+          {/* <Route path='/AddFamily' element={<AddFamily/>}/> */}
         </Routes>
       </BrowserRouter>
 
