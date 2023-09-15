@@ -7,6 +7,7 @@ import Families from "./components/Families";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Error404 from "./components/Error404";
+import Donations from "./components/Donations"
 function App() {
   return (
     <div className="App">
