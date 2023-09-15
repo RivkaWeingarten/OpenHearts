@@ -16,11 +16,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/families" element={<Families />} />
-          <Route path="/donations" element={<Donations />} />
-          <Route path="*" element={<Error404 />} />
-          <Route path="/family/:id" component={FamilyDetails} />
+        <Route path="/" element={<Home />} />
+        <Route path="/families" element={<Families />} />
+        <Route path="/donations" element={<Donations />} />
+        <Route path="/family/:id" element={FamilyDetails} />
+        <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
 
