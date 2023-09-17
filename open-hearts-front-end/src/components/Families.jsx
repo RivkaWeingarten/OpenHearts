@@ -60,6 +60,7 @@ function Families() {
   }, []);
 
   let familiesFormatted = families.map((family) => {
+    console.log(family._id)
     return (
       <div className="show-families">
         <div className="family-info">
@@ -79,7 +80,7 @@ function Families() {
             <li>Other: ${family.other}</li>
           </ul>
           <p>{family.moreInfo}</p>
-          <Link to={`/family/${family.ID}`} key={family.ID}>
+          <Link to={`/family/${family._id}`} key={family._id}>
             <button>Donate Now</button>
           </Link>
         </div>
