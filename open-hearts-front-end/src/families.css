@@ -10,6 +10,7 @@
 } */
 .families-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -21,6 +22,7 @@
 }  */
 
 .show-families {
+  display: flex;
   width: 300px;
   margin: 1rem;
   background-color: var(--primary-color);
@@ -84,4 +86,9 @@ button {
   font-weight: bolder;
   border: 0;
   border-radius: 5px;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
 }
