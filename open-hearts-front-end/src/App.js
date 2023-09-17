@@ -10,6 +10,7 @@ import AddFamily from "./components/AddFamily"
 import "./App.css";
 import "./index.css";
 import "./families.css";
+import Editfamily from "./components/EditFamily";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/donate" element={<Donations />} />
           <Route path="/families/new" element={<AddFamily/>} />
           <Route path="*" element={<Error404 />} />
+          <Route path='/families/:id/edit' element={<Editfamily/>}/>
           {/* <Route path='/AddFamily' element={<AddFamily/>}/> */}
         </Routes>
       </BrowserRouter>
