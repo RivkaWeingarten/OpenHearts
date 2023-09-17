@@ -47,6 +47,7 @@ import { useEffect, useState } from "react";
 //   },
 // ];
 
+
 function Families() {
   const [families, setFamilies] = useState([]);
   useEffect(() => {
@@ -60,11 +61,11 @@ function Families() {
 
   let familiesFormatted = families.map((family) => {
     return (
-      <div key={family.ID} className="show-families">
+      <div className="show-families">
         <div className="family-info">
           <h2>
-            <a href={family.id}>{family.name}</a>
-            <img src="https://th.bing.com/th?id=OIP.IQehT3nzWIi7bEck-XyvdQHaFH&w=300&h=207&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="family"></img>
+            <a href={family._id}>{family.name}</a>
+            <img src={family.pic}></img>
           </h2>
         </div>
         <div className="description-family">
