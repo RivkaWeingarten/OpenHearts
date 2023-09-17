@@ -27,7 +27,7 @@ function Editfamily() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:5000/places/${familiesId}`);
+      const response = await fetch(`http://localhost:5001/places/${familiesId}`);
       const resData = await response.json();
       setFamily(resData);
     };
@@ -37,7 +37,7 @@ function Editfamily() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5000/places/${family.familiesId}`, {
+    await fetch(`http://localhost:5001/places/${family.familiesId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function Editfamily() {
       body: JSON.stringify(family),
     });
 
-    navigate.push(`/places/${family.familiesId}`);
+    navigate.push(`/places/${family.familiesId}/edit`);
   }
 
   return (
