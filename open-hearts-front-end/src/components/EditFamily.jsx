@@ -1,8 +1,10 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddFamily() {
+function Editfamily() {
   const navigate = useNavigate();
+
+  const { familiesId } = useParams();
 
   const [family, setFamily] = useState({
     name: "",
@@ -23,18 +25,27 @@ function AddFamily() {
     other: "",
   });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:5000/places/${familiesId}`);
+      const resData = await response.json();
+      setFamily(resData);
+    };
+    fetchData();
+  }, [familiesId]);
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5001/families`, {
-      method: "POST",
+    await fetch(`http://localhost:5000/places/${family.familiesId}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(family),
     });
 
-    navigate("/families");
+    navigate.push(`/places/${family.familiesId}`);
   }
 
   return (
@@ -76,7 +87,6 @@ function AddFamily() {
           />
         </div>
 
-    
         <div className="form-group">
           <label htmlFor="address1">Address 1</label>
           <input
@@ -264,10 +274,11 @@ function AddFamily() {
 						className="form-control"
 						id="cuisines" name="cuisines" required />
 				</div> */}
-        <input className="btn btn-primary" type="submit" value="Add Family" />
+        <input className="btn btn-primary" type="submit" value="Edit Family" />
+        <input className="btn btn-primary" type="delete" value="delete Family" />
       </form>
     </main>
   );
 }
 
-export default AddFamily;
+export default Editfamily;

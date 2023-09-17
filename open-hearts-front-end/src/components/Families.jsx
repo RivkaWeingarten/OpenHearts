@@ -1,16 +1,13 @@
 import "../families.css";
 import { useEffect, useState } from "react";
 
-
-
 function Families() {
   const [families, setFamilies] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5000/families");
+      const res = await fetch("http://localhost:5001/families");
       const resData = await res.json();
       setFamilies(resData);
-    
     };
     fetchData();
   }, []);
@@ -35,11 +32,11 @@ function Families() {
             </ul>
           </p>
           <p>{family.moreInfo}</p>
-        
+
           <button>
-          <a href={`/families/${family._id}`} rel="donate button">
-          Donate Now 
-        </a>
+            <a href={`/families/${family._id}`} rel="donate button">
+              Donate Now
+            </a>
           </button>
         </div>
       </div>
