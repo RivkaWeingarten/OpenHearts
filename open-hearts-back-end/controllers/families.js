@@ -17,6 +17,7 @@ require("dotenv").config();
 
 router.get("/", async (req, res) => {
   const families = await db.Family.find();
+  console.log(families)
   res.json(families);
 });
 
