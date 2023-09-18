@@ -1,7 +1,22 @@
-import React from "react";
 // import "./App.css"
 import heartLogo from "../images/twohearts.png";
+
+import React, { useEffect, useState } from "react";
+
 function Navbar() {
+  const [totalDonationAmount, setTotalDonationAmount] = useState(0);
+
+  useEffect(() => {
+    // Make an API request to fetch the total donation amount
+    fetch("http://localhost:5000/families/fetchtotaldonationamount")
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalDonationAmount(data.totalDonationAmount);
+      })
+      .catch((error) => {
+        console.error("Error fetching total donation amount:", error);
+      });
+  }, []);
   return (
     <nav className="navbar">
       <ul>
@@ -35,7 +50,9 @@ function Navbar() {
       </ul>
       {/* <img className="heart-logo" src={heartLogo} alt="image of two hearts" /> */}
       {/* //need function to figure out total raised' */}
-      <p className="total-raised"> Total raised $1000</p>
+      <p className="total-raised">
+        <span>Total raised ${totalDonationAmount}</span>
+      </p>
     </nav>
   );
 }

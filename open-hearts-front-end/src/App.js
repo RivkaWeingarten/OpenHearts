@@ -22,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/families" element={<Families />} />
         <Route path="/donations" element={<Donations />} />
+        <Route path="/families/new" element={<AddFamily/>} />
         <Route path="/family/:id" element={FamilyDetails} />
         <Route path="*" element={<Error404 />} />
         {/* <Route path='/AddFamily' element={<AddFamily/>}/> */}
