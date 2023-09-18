@@ -147,17 +147,23 @@ background-color: lavender;
 }
 
 .thank-you {
-  color: #cc4d7b;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 28px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 .donation-text {
   color: #cc4d7b;
-  font-size: 23px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
   margin-right: 20px;
   margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 form {
