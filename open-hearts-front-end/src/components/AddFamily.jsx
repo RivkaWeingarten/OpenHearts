@@ -41,7 +41,7 @@ function AddFamily() {
     <main>
       <h1>Add a New Family</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="add-family">
           <label htmlFor="name">Family Name</label>
           <input
             required
@@ -236,35 +236,8 @@ function AddFamily() {
             placeholder="What is your estimated monthly budget for other expenses"
           />
         </div>
-        {/* <div className="form-group">
-					<label htmlFor="city">City</label>
-					<input
-						value={place.city}
-						onChange={e => setPlace({ ...place, city: e.target.value })}
-						className="form-control"
-						id="city"
-						name="city"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="state">State</label>
-					<input
-						value={place.state}
-						onChange={e => setPlace({ ...place, state: e.target.value })}
-						className="form-control"
-						id="state"
-						name="state"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="cuisines">Cuisines</label>
-					<input
-						value={place.cuisines}
-						onChange={e => setPlace({ ...place, cuisines: e.target.value })}
-						className="form-control"
-						id="cuisines" name="cuisines" required />
-				</div> */}
-        <input className="btn btn-primary" type="submit" value="Add Family" />
+ 
+        <input className="submit-button" type="submit" value="Add Family" />
       </form>
     </main>
   );

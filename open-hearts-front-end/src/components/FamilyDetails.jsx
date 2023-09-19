@@ -22,6 +22,8 @@ function FamilyDetails() {
     };
     fetchData();
   }, [id]);
+
+
   
   if (!family) {
     return <div>Loading...</div>;

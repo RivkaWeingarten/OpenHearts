@@ -123,8 +123,8 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   db.Family.findByIdAndDelete(req.params.id)
-    .then((family) => {
-      res.json(family.name + " deleted");
+    .then(() => {
+      res.json( " deleted");
     })
     .catch((err) => {
       console.log("err", err);
