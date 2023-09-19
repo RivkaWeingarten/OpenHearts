@@ -13,7 +13,7 @@ function CreditCardForm() {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/families/donate", {
+      const response = await fetch("http://localhost:5001/families/donate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,7 +162,8 @@ function CreditCardForm() {
         </div>
         <div className="ccContainer">
           <button type="submit" className="submit-button">
-            <a href="#">Submit Payment</a>
+            {/* <a href="#">Submit Payment</a> */}
+            Submit Payment
             {/* Add administrator's email */}
           </button>
         </div>

@@ -7,7 +7,7 @@ function Families() {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5000/families");
+      const res = await fetch("http://localhost:5001/families");
       const resData = await res.json();
       setFamilies(resData);
     };
@@ -30,9 +30,9 @@ function Families() {
     let totalDonation = Math.round(sumDonations);
 
     let donation = (
-      <h3 style={{ color: "purple" }}>
+      <p style={{ color: "purple" }}>
         ${totalDonation} raised for this family
-      </h3>
+      </p>
     );
     //
     return (

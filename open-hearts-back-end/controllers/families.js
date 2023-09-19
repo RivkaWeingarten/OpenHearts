@@ -109,6 +109,7 @@ router.post("/donate", async (req, res) => {
 
 //Edit Family Route
 router.put("/:id", (req, res) => {
+  console.log(req.body)
   db.Family.findByIdAndUpdate(req.params.id, req.body)
     .then((family) => {
       res.json(family);

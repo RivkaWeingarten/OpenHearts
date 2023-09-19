@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddFamily() {
+function Editfamily() {
   const navigate = useNavigate();
+  const { familyId } = useParams();
 
   const [family, setFamily] = useState({
     name: "",
@@ -23,25 +24,36 @@ function AddFamily() {
     other: "",
   });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `http://localhost:5001/families/${familyId}`
+      );
+      const resData = await response.json();
+      setFamily(resData);
+    };
+    fetchData();
+  }, [familyId]);
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5001/families`, {
-      method: "POST",
+    await fetch(`http://localhost:5001/families/${family.familyId}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(family),
     });
 
-    navigate("/families");
+    navigate.push(`/families/${family.familyId}/edit`);
   }
 
   return (
     <main>
-      <h1>Add a New Family</h1>
+      <h1>Edit Family</h1>
       <form onSubmit={handleSubmit}>
-        <div className="add-family">
+        <div className="form-group">
           <label htmlFor="name">Family Name</label>
           <input
             required
@@ -76,7 +88,6 @@ function AddFamily() {
           />
         </div>
 
-    
         <div className="form-group">
           <label htmlFor="address1">Address 1</label>
           <input
@@ -236,11 +247,43 @@ function AddFamily() {
             placeholder="What is your estimated monthly budget for other expenses"
           />
         </div>
- 
-        <input className="submit-button" type="submit" value="Add Family" />
+        {/* <div className="form-group">
+					<label htmlFor="city">City</label>
+					<input
+						value={place.city}
+						onChange={e => setPlace({ ...place, city: e.target.value })}
+						className="form-control"
+						id="city"
+						name="city"
+					/>
+				</div>
+				<div className="form-group">
+					<label htmlFor="state">State</label>
+					<input
+						value={place.state}
+						onChange={e => setPlace({ ...place, state: e.target.value })}
+						className="form-control"
+						id="state"
+						name="state"
+					/>
+				</div>
+				<div className="form-group">
+					<label htmlFor="cuisines">Cuisines</label>
+					<input
+						value={place.cuisines}
+						onChange={e => setPlace({ ...place, cuisines: e.target.value })}
+						className="form-control"
+						id="cuisines" name="cuisines" required />
+				</div> */}
+        <input className="btn btn-primary" type="submit" value="Edit Family" />
+        <input
+          className="btn btn-primary"
+          type="delete"
+          value="delete Family"
+        />
       </form>
     </main>
   );
 }
 
-export default AddFamily;
+export default Editfamily;

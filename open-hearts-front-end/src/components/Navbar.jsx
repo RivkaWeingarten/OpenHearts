@@ -8,7 +8,7 @@ function Navbar() {
 
   useEffect(() => {
     // Make an API request to fetch the total donation amount
-    fetch("http://localhost:5000/families/fetchtotaldonationamount")
+    fetch("http://localhost:5001/families/fetchtotaldonationamount")
       .then((response) => response.json())
       .then((data) => {
         setTotalDonationAmount(data.totalDonationAmount);
