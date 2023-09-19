@@ -7,7 +7,7 @@ app.engine("jsx", require("express-react-views").createEngine());
 app.use(cors());
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 app.use("/families", require("./controllers/families"));
 
 app.get("/", (req, res) => {
