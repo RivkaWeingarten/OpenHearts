@@ -2,13 +2,36 @@ const router = require("express").Router();
 const db = require("../models");
 require("dotenv").config();
 // const families = require("../models/family_model.js");
+//fetchtotal amount
+router.get("/fetchtotaldonationamount", async (req, res) => {
+  try {
+    const result = await db.Donation.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalDonationAmount: { $sum: "$donationAmount" },
+        },
+      },
+    ]).exec();
+
+    if (result.length > 0) {
+      const totalDonationAmount = result[0].totalDonationAmount;
+      res.json({ totalDonationAmount });
+    } else {
+      res.json({ totalDonationAmount: 0 });
+    }
+  } catch (error) {
+    console.error("Error calculating total donation amount:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 // show all families
 router.get("/", async (req, res) => {
   const families = await db.Family.find()
     .populate("donations")
     .then((families) => {
-      console.log(families)
+      console.log(families);
       res.json(families);
     })
     .catch((err) => {
@@ -43,6 +66,47 @@ router.get("/:id", (req, res) => {
       res.status(500).json({ error: "An error occurred" });
     });
 });
+router.post("/donate", async (req, res) => {
+  try {
+    const { donor, donationAmount } = req.body;
+
+    if (!donor || !donationAmount) {
+      return res.status(400).json({ error: 'Donor  and donationamount are required.' });
+    }
+    const families = await db.Family.find();
+
+    if (families.length > 0) {
+    
+      const totalFamilies = families.length;
+      const amountPerFamily = donationAmount / totalFamilies;
+
+    
+      const donations = [];
+
+      for (const family of families) {
+        const donation = await db.Donation.create({
+          donor,
+          donationAmount: amountPerFamily,
+        });
+
+        family.donations.push(donation.id);
+        family.balance += amountPerFamily;
+        await family.save();
+
+        donations.push(donation);
+      }
+
+      res.json({ message: 'Donation distributed successfully.', donations });
+    } else {
+      res.json({ message: 'No families found to distribute donation.' });
+    }
+  } catch (error) {
+    console.error('Error distributing donation:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 //Edit Family Route
 router.put("/:id", (req, res) => {
   console.log(req.body)
@@ -60,8 +124,8 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   db.Family.findByIdAndDelete(req.params.id)
-    .then((family) => {
-      res.json(family.name + " deleted");
+    .then(() => {
+      res.json( " deleted");
     })
     .catch((err) => {
       console.log("err", err);
