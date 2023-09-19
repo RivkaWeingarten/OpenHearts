@@ -15,7 +15,8 @@ code {
 .navbar {
   background-image: linear-gradient(#340e7c, rgb(81, 20, 155));
   color: lightgrey;
-  font-size: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
   height: 10vh;
   border-radius: 40px 40px 300px 300px;
 
@@ -24,6 +25,8 @@ code {
 .navbar ul {
   list-style-type: none;
   margin: 0;
+  text-align: center;
+ 
 
 }
 
@@ -44,8 +47,23 @@ code {
   color: pink;
   text-decoration: none;
 }
+
+.total-raised{
+  margin-right: 50px;
+  text-align: end;
+}
+
+.navbar img{
+  width:100px;
+  
+}
+.heart-logo{
+  width:100px;
+  justify-content: center;
+}
+
 .explore-button {
-   /* background-color: var(--primary-color); */
+  /* background-color: var(--primary-color); */
   color: white;
   background-color: #a407a1;
   cursor: pointer;
@@ -56,13 +74,19 @@ code {
   font-weight: bolder;
   border: 0;
   border-radius: 5px;
- 
+  width:300px;
 }
 .explore-button a{
   color:white;
 text-decoration: none;
 font-size: 1.5rem;
+
+.explore-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
+
 .explore-button a:hover {
   color: pink;
 }
@@ -72,11 +96,48 @@ font-size: 1.5rem;
   text-align: center;
   margin: auto;
   padding: 10%;
-  
 }
 
 .family {
 width: 80vw;
 border:#340e7c solid;
 border-radius: 1%;
+}
+
+.ccContainer {
+  margin-top: 20px; 
+}
+
+.input-group {
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.input-group label {
+  margin-top: 15px;
+  margin-right: 10px; /* Adjust the margin as needed */
+  display: inline-block;
+  width: 150px; /* Adjust the width as needed */
+}
+
+.ccBackground {
+background-color: lavender;
+}
+
+.helping-hands {
+ width: 350px;
+ height: auto
+}
+
+.thank-you {
+  color: #cc4d7b;
+  font-size: 28px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.donation-text {
+  color: #cc4d7b;
+  font-size: 23px;
+  margin-right: 20px;
+  margin-left: 20px;
 }

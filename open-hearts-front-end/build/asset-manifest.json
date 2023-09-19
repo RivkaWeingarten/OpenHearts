@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1000c992.css",
+    "main.js": "/static/js/main.17df55fb.js",
+    "static/js/787.aa947efc.chunk.js": "/static/js/787.aa947efc.chunk.js",
+    "static/media/twohearts.png": "/static/media/twohearts.ccace421b99638a888ec.png",
+    "index.html": "/index.html",
+    "main.1000c992.css.map": "/static/css/main.1000c992.css.map",
+    "main.17df55fb.js.map": "/static/js/main.17df55fb.js.map",
+    "787.aa947efc.chunk.js.map": "/static/js/787.aa947efc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1000c992.css",
+    "static/js/main.17df55fb.js"
+  ]
+}
