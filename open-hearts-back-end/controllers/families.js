@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
   const families = await db.Family.find()
     .populate("donations")
     .then((families) => {
+      console.log(families)
       res.json(families);
     })
     .catch((err) => {

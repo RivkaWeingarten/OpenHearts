@@ -76,6 +76,7 @@ code {
   border-radius: 5px;
   width:300px;
 }
+
 .explore-button a {
   color: white;
   text-decoration: none;
@@ -83,6 +84,29 @@ code {
 }
 .explore-button a:hover {
   color: pink;
+}
+
+.submit-button {
+  /* background-color: var(--primary-color); */
+ color: white;
+ background-color: #a407a1;
+ cursor: pointer;
+ display: inline-block;
+ padding: 15px;
+ font-family: inherit;
+ font-size: 16px;
+ font-weight: bolder;
+ border: 0;
+ border-radius: 5px;
+
+}
+.submit-button a{
+color:white;
+text-decoration: none;
+font-size: 1.5rem;
+}
+.submit-button a:hover {
+ color: pink;
 }
 
 .aboutUs {
@@ -97,6 +121,45 @@ width: 80vw;
 border:#340e7c solid;
 border-radius: 1%;
 }
+
+.ccContainer {
+  margin-top: 20px; 
+}
+
+.input-group {
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.input-group label {
+  margin-top: 15px;
+  margin-right: 10px; /* Adjust the margin as needed */
+  display: inline-block;
+  width: 150px; /* Adjust the width as needed */
+}
+
+.ccBackground {
+background-color: lavender;
+}
+
+.helping-hands {
+ width: 350px;
+ height: auto
+}
+
+.thank-you {
+  color: #cc4d7b;
+  font-size: 28px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.donation-text {
+  color: #cc4d7b;
+  font-size: 23px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 form {
   max-width: 700px;
   position: relative;
@@ -113,8 +176,6 @@ form {
 
 }
 
-
-
 form label {
   position: relative;
   padding: 5px;
@@ -130,3 +191,4 @@ form input {
   justify-content: space-around;
   text-align: center;
 }
+

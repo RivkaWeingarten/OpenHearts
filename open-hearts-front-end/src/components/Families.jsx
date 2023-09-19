@@ -1,4 +1,5 @@
 import "../families.css";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Families() {
@@ -13,6 +14,7 @@ function Families() {
   }, []);
 
   let familiesFormatted = families.map((family) => {
+    console.log(family._id);
     return (
       <div className="show-families">
         <div className="family-info">
@@ -24,13 +26,13 @@ function Families() {
         <div className="description-family">
           <p>
             <strong> Monthly Budget: ${family.monthlyBudget}</strong>
-            <ul>
-              <li>Groceries:${family.food}</li>
-              <li>Rent:${family.rent}</li>
-              <li>Utilities:${family.utilityBills}</li>
-              <li> Other:${family.other}</li>
-            </ul>
           </p>
+          <ul>
+            <li>Groceries: ${family.food}</li>
+            <li>Rent: ${family.rent}</li>
+            <li>Transportation: ${family.utilityBills}</li>
+            <li>Other: ${family.other}</li>
+          </ul>
           <p>{family.moreInfo}</p>
 
           <button>
@@ -38,6 +40,10 @@ function Families() {
               Donate Now
             </a>
           </button>
+
+          <Link to={`/family/${family._id}`} key={family._id}>
+            <button>Donate Now</button>
+          </Link>
         </div>
       </div>
     );

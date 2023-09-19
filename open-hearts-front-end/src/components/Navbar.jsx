@@ -28,7 +28,7 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="/donate" rel="Donate">
+          <a href="/donations" rel="Donate">
             Donate
           </a>
         </li>
