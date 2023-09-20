@@ -9,7 +9,7 @@ function FamilyDetails() {
     console.log('ID parameter:', id); // Log the value of id
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/families/${id}`);
+        const res = await fetch(`http://localhost:5001/families/${id}`);
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
@@ -22,6 +22,8 @@ function FamilyDetails() {
     };
     fetchData();
   }, [id]);
+
+
   
   if (!family) {
     return <div>Loading...</div>;
