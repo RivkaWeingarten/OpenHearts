@@ -55,7 +55,7 @@ function Families() {
             <li>Other: ${family.other}</li>
           </ul>
           {/* <p>{family.moreInfo}</p> */}
-          <Link to={`/family/${family._id}`} key={family._id}>
+          <Link to={`/familes/${family._id}`} key={family._id}>
             <button>Donate Now</button>
           </Link>
           {/* <button

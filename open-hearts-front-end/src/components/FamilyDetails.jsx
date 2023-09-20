@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SingleCreditCardForm from './SingleCreditCardForm'; 
 
 function FamilyDetails() {
   const { id } = useParams();
@@ -23,26 +24,27 @@ function FamilyDetails() {
     fetchData();
   }, [id]);
 
-
-  
   if (!family) {
     return <div>Loading...</div>;
   }
 
+  const style = {
+    lineHeight: '2.5',
+  };
+
   return (
     <div>
-      <h2>{family.name}</h2>
-      <img src={family.pic} alt={family.alias} />
-      <div>
+      <h2 style={style}>{family.name}</h2>
+      <img src={family.pic} alt={family.alias} style={style} />
+      <div style={style}>
         <strong>Monthly Budget: ${family.monthlyBudget}</strong>
-        <ul>
-          <li>Groceries: ${family.groceries}</li>
-          <li>Rent: ${family.rent}</li>
-          <li>Utility Bills: ${family.utilityBills}</li>
-          <li>Other: ${family.other}</li>
-        </ul>
+        <p>Groceries: ${family.groceries}</p>
+        <p>Rent: ${family.rent}</p>
+        <p>Utility Bills: ${family.utilityBills}</p>
+        <p>Other: ${family.other}</p>
       </div>
-      <p>{family.moreInfo}</p>
+      <p style={style}>{family.moreInfo}</p>
+      <SingleCreditCardForm family={family} /> {/* Pass the family object as a prop */}
     </div>
   );
 }
