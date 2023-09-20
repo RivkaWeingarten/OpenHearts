@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CreditCardForm({ family }) {
+function SingleCreditCardForm({ family }) {
   const [donor, setDonor] = useState("");
   const [donationAmount, setDonationAmount] = useState("");
 
@@ -13,13 +13,16 @@ function CreditCardForm({ family }) {
     };
 
     try {
-      const response = await fetch(`http://localhost:5001/families/${family._id}/donation`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
-      });
+      const response = await fetch(
+        `http://localhost:5001/families/${family._id}/donation`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        }
+      );
 
       if (response.ok) {
         console.log("Donation submitted successfully");
@@ -171,4 +174,4 @@ function CreditCardForm({ family }) {
   );
 }
 
-export default CreditCardForm;
+export default SingleCreditCardForm;

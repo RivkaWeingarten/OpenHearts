@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SingleCreditCardForm from "./SingleCreditCardForm";
+import SingleCreditCardForm from './SingleCreditCardForm'; // Import the updated SingleCreditCardForm component
 
 function FamilyDetails() {
   const { id } = useParams();
@@ -29,7 +29,7 @@ function FamilyDetails() {
   }
 
   const style = {
-    lineHeight: '2.5', 
+    lineHeight: '2.5',
   };
 
   return (
@@ -44,7 +44,7 @@ function FamilyDetails() {
         <p>Other: ${family.other}</p>
       </div>
       <p style={style}>{family.moreInfo}</p>
-      <SingleCreditCardForm />
+      <SingleCreditCardForm family={family} /> {/* Pass the family object as a prop */}
     </div>
   );
 }
