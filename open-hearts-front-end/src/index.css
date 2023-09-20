@@ -127,14 +127,16 @@ border-radius: 1%;
 }
 
 .input-group {
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  margin-bottom: 20px; 
 }
 
 .input-group label {
-  margin-top: 15px;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-top: 20px;
+  margin-right: 20px; 
+  margin-left: 20px;
   display: inline-block;
-  width: 150px; /* Adjust the width as needed */
+  width: 80px; 
+  font-size: smaller;
 }
 
 .ccBackground {
@@ -148,16 +150,22 @@ background-color: lavender;
 
 .thank-you {
   color: #cc4d7b;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 28px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 .donation-text {
   color: #cc4d7b;
-  font-size: 23px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
   margin-right: 20px;
   margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 form {
@@ -190,5 +198,9 @@ form input {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: smaller;
 }
 
