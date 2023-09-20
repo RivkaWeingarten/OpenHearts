@@ -1,9 +1,10 @@
 import "../families.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Families() {
   const [families, setFamilies] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("http://localhost:5001/families");
@@ -14,7 +15,26 @@ function Families() {
   }, []);
 
   let familiesFormatted = families.map((family) => {
-    console.log(family._id);
+    // async function handleDelete(e) {
+    //   e.preventDefault();
+
+    //   await fetch(`http://localhost:5000/families/${family._id}`, {
+    //     method: "DELETE",
+    //   });
+    //   navigate("/families");
+    // }
+
+    let sumDonations = family.donations.reduce((tot, c) => {
+      return tot + c.donationAmount;
+    }, 0);
+    let totalDonation = Math.round(sumDonations);
+
+    let donation = (
+      <p style={{ color: "purple" }}>
+        ${totalDonation} raised for this family
+      </p>
+    );
+    //
     return (
       <div className="show-families">
         <div className="family-info">
@@ -26,24 +46,25 @@ function Families() {
         <div className="description-family">
           <p>
             <strong> Monthly Budget: ${family.monthlyBudget}</strong>
+            <span>{donation}</span>
           </p>
           <ul>
             <li>Groceries: ${family.food}</li>
             <li>Rent: ${family.rent}</li>
-            <li>Transportation: ${family.utilityBills}</li>
+            <li>Utilities: ${family.utilityBills}</li>
             <li>Other: ${family.other}</li>
           </ul>
-          <p>{family.moreInfo}</p>
-
-          <button>
-            <a href={`/families/${family._id}`} rel="donate button">
-              Donate Now
-            </a>
-          </button>
-
+          {/* <p>{family.moreInfo}</p> */}
           <Link to={`/family/${family._id}`} key={family._id}>
             <button>Donate Now</button>
           </Link>
+          {/* <button
+            style={{ backgroundColor: "white", width: "20px" }}
+            onClick={handleDelete}
+            className="btnEditDelete"
+          >
+            &#10060;
+          </button> */}
         </div>
       </div>
     );
