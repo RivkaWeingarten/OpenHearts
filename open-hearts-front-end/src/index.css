@@ -131,8 +131,8 @@ border-radius: 1%;
 }
 
 .input-group label {
-  margin-top: 15px;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-top: 20px;
+  margin-right: 20px; /* Adjust the margin as needed */
   display: inline-block;
   width: 150px; /* Adjust the width as needed */
 }
@@ -147,7 +147,7 @@ background-color: lavender;
 }
 
 .thank-you {
-  color: black;
+  color: #cc4d7b;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 28px;
   margin-top: 60px;
@@ -196,5 +196,9 @@ form input {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
