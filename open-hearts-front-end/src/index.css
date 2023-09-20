@@ -127,14 +127,16 @@ border-radius: 1%;
 }
 
 .input-group {
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  margin-bottom: 20px; 
 }
 
 .input-group label {
   margin-top: 20px;
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 20px; 
+  margin-left: 20px;
   display: inline-block;
-  width: 150px; /* Adjust the width as needed */
+  width: 80px; 
+  font-size: smaller;
 }
 
 .ccBackground {
@@ -196,9 +198,9 @@ form input {
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: smaller;
 }
 
