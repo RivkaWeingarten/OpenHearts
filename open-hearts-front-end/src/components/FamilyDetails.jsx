@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SingleCreditCardForm from './SingleCreditCardForm'; // Import the updated SingleCreditCardForm component
+import SingleCreditCardForm from './SingleCreditCardForm'; 
 
 function FamilyDetails() {
   const { id } = useParams();
