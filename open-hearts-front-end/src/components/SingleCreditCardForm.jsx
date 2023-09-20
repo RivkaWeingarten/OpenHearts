@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CreditCardForm() {
+function CreditCardForm({ family }) {
   const [donor, setDonor] = useState("");
   const [donationAmount, setDonationAmount] = useState("");
 
@@ -33,24 +33,11 @@ function CreditCardForm() {
     setDonor("");
     setDonationAmount("");
   };
+
   return (
     <div className="ccBackground">
       <form onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col-md-6">
-            <div className="input-group">
-              <label htmlFor="cardNumber" className="form-label">
-                Card Number
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="cardNumber"
-                placeholder="1234 5678 9012 3456"
-                // required not real so not needed yet
-              />
-            </div>
-          </div>
           <div className="col-md-6">
             <div className="input-group">
               <label htmlFor="donor" className="form-label">
@@ -80,6 +67,20 @@ function CreditCardForm() {
                 placeholder="Enter Donation Amount"
                 onChange={(e) => setDonationAmount(e.target.value)}
                 required
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-group">
+              <label htmlFor="cardNumber" className="form-label">
+                Card Number
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="cardNumber"
+                placeholder="1234 5678 9012 3456"
+                // required not real so not needed yet
               />
             </div>
           </div>
@@ -162,9 +163,7 @@ function CreditCardForm() {
         </div>
         <div className="ccContainer">
           <button type="submit" className="submit-button">
-            {/* <a href="#">Submit Payment</a> */}
             Submit Payment
-            {/* Add administrator's email */}
           </button>
         </div>
       </form>

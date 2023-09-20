@@ -24,7 +24,7 @@ function App() {
           <Route path="/families" element={<Families />} />
           <Route path="/donations" element={<Donations />} />
           <Route path="/families/new" element={<AddFamily />} />
-          <Route path="/family/:id" element={<FamilyDetails />} />
+          <Route path="/familes/:id" element={<FamilyDetails />} />
           <Route path="/families/:id/edit" element={<Editfamily />} />
           <Route path="*" element={<Error404 />} />
 
