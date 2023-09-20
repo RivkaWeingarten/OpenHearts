@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import {useParams} from 'react-router'
 function Editfamily() {
   const navigate = useNavigate();
-  const { familyId } = useParams();
+  const { id } = useParams();
 
   const [family, setFamily] = useState({
     name: "",
@@ -27,18 +27,18 @@ function Editfamily() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `http://localhost:5001/families/${familyId}`
+        `http://localhost:5001/families/${id}`
       );
       const resData = await response.json();
       setFamily(resData);
     };
     fetchData();
-  }, [familyId]);
+  }, [id]);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5001/families/${family.familyId}`, {
+    await fetch(`http://localhost:5001/families/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Editfamily() {
       body: JSON.stringify(family),
     });
 
-    navigate.push(`/families/${family.familyId}/edit`);
+    navigate(`/families/${id}`);
   }
 
   return (
@@ -97,7 +97,7 @@ function Editfamily() {
             className="form-control"
             id="address1"
             name="address1"
-            placeholder="Enter address here"
+            // placeholder="Enter address here"
           />
         </div>
 
@@ -109,7 +109,7 @@ function Editfamily() {
             className="form-control"
             id="address2"
             name="address2"
-            placeholder="Enter address line 2 here. (optional)"
+            // placeholder="Enter address line 2 here. (optional)"
           />
         </div>
 
@@ -168,7 +168,7 @@ function Editfamily() {
             className="form-control"
             id="email"
             name="email"
-            placeholder="Enter Email address where we can reach you"
+            // placeholder="Enter Email address where we can reach you"
           />
         </div>
 
@@ -180,7 +180,7 @@ function Editfamily() {
             className="form-control"
             id="moreInfo"
             name="moreInfo"
-            placeholder="Describe your situation in a few words"
+            // placeholder="Describe your situation in a few words"
           />
         </div>
 
@@ -194,7 +194,7 @@ function Editfamily() {
             className="form-control"
             id="monthlyBudget"
             name="monthlyBudget"
-            placeholder="Estimated Monthly Budget"
+            // placeholder="Estimated Monthly Budget"
           />
         </div>
 
@@ -244,37 +244,10 @@ function Editfamily() {
             className="form-control"
             id="other"
             name="other"
-            placeholder="What is your estimated monthly budget for other expenses"
+            // placeholder="What is your estimated monthly budget for other expenses"
           />
         </div>
-        {/* <div className="form-group">
-					<label htmlFor="city">City</label>
-					<input
-						value={place.city}
-						onChange={e => setPlace({ ...place, city: e.target.value })}
-						className="form-control"
-						id="city"
-						name="city"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="state">State</label>
-					<input
-						value={place.state}
-						onChange={e => setPlace({ ...place, state: e.target.value })}
-						className="form-control"
-						id="state"
-						name="state"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="cuisines">Cuisines</label>
-					<input
-						value={place.cuisines}
-						onChange={e => setPlace({ ...place, cuisines: e.target.value })}
-						className="form-control"
-						id="cuisines" name="cuisines" required />
-				</div> */}
+        
         <input className="btn btn-primary" type="submit" value="Edit Family" />
         <input
           className="btn btn-primary"
