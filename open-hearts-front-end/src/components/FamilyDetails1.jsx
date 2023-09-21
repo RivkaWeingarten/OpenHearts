@@ -63,30 +63,30 @@ function FamilyDetails1() {
 
   return (
     <main>
-      <div className="row">
+      <div className="editDelete">
         <div className="edit-delete">
+        <a style={{color:"maroon"}}> For administrative use only! </a>
           <a
             style={{ color: "maroon", textDecoration: "none" }}
             href={`/families/${family._id}/edit`}
             className="btnEditDelete"
           >
-            Edit ✏️
+            <span> Edit ✏️ </span>
           </a>
           <a
             style={{ color: "maroon", textDecoration: "none" }}
             onClick={handleDelete}
             className="btnEditDelete"
           >
-            Delete &#10060;
+           <span> Delete &#10060; </span>
           </a>
-          Only for Administrative use
         </div>
       </div>
       <div className="row">
         <div className="col-sm-6">
           <img src={family.pic} alt={family.name} />
 
-          <h3>
+          <h3 className="location">
             from {family.city}, {family.state}
           </h3>
           <p>{family.moreInfo}</p>

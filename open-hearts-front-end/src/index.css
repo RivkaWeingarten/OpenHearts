@@ -94,13 +94,16 @@ code {
   font-weight: bolder;
   border: 0;
   border-radius: 5px;
-  align-items: center;
+  margin: auto;
+  margin-top: 20px;
 }
+
 .submit-button a {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
 }
+
 .submit-button a:hover {
   color: pink;
 }
@@ -185,6 +188,7 @@ form label {
   font-weight: bolder;
 }
 form input {
+  max-width: 680px;
   position: relative;
   padding-left: 10px;
   color: blue;
@@ -202,17 +206,42 @@ form input {
 .btnEditDelete {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 0.5 rem;
+  margin-bottom: 40px;
 }
-.edit-delete {
+
+.editDelete {
+  display: flex;
+  justify-content: right; 
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.edit-delete  span {
   /* display: flex; */
   flex: none;
   cursor: pointer;
-  background-color: #df93af;
   color:maroon;
-  justify-content: right;
-
+  border: 2px solid maroon;
+  padding: 3px;
+  margin: 3px;
 }
+
 h1 {
   color: #cc4d7b;
+}
+
+.col-sm-4 {
+  margin-top: 20px;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.col-sm-6 img{ 
+  margin: 40px;
+  margin-left: 250px;
+}
+
+.location {
+  margin-left: 100px;
 }
