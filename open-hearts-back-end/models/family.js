@@ -24,4 +24,5 @@ let familySchema = new mongoose.Schema({
   donations: [{ type: mongoose.Schema.Types.ObjectId, ref: "Donation" }],
 });
 
+
 module.exports = mongoose.model("Family", familySchema);

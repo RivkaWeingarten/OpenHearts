@@ -29,9 +29,9 @@ router.get("/fetchtotaldonationamount", async (req, res) => {
 // show all families
 router.get("/", async (req, res) => {
   const families = await db.Family.find()
+    .sort({ name: 1 })
     .populate("donations")
     .then((families) => {
-      console.log(families);
       res.json(families);
     })
     .catch((err) => {
@@ -66,21 +66,18 @@ router.get("/:id", (req, res) => {
       res.status(500).json({ error: "An error occurred" });
     });
 });
+
+//donate to all families equally
 router.post("/donate", async (req, res) => {
   try {
     const { donor, donationAmount } = req.body;
 
-    if (!donor || !donationAmount) {
-      return res.status(400).json({ error: 'Donor  and donationamount are required.' });
-    }
     const families = await db.Family.find();
 
     if (families.length > 0) {
-    
       const totalFamilies = families.length;
       const amountPerFamily = donationAmount / totalFamilies;
 
-    
       const donations = [];
 
       for (const family of families) {
@@ -96,20 +93,19 @@ router.post("/donate", async (req, res) => {
         donations.push(donation);
       }
 
-      res.json({ message: 'Donation distributed successfully.', donations });
+      res.json({ message: "Donation distributed successfully.", donations });
     } else {
-      res.json({ message: 'No families found to distribute donation.' });
+      res.json({ message: "No families found to distribute donation." });
     }
   } catch (error) {
-    console.error('Error distributing donation:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error("Error distributing donation:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-
 //Edit Family Route
 router.put("/:id", (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   db.Family.findByIdAndUpdate(req.params.id, req.body)
     .then((family) => {
       res.json(family);
@@ -125,13 +121,15 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   db.Family.findByIdAndDelete(req.params.id)
     .then(() => {
-      res.json( " deleted");
+      res.json(" deleted");
     })
     .catch((err) => {
       console.log("err", err);
       res.status(500).json({ error: "An error occurred" });
     });
 });
+
+
 
 // add donation
 
