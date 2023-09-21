@@ -46,7 +46,7 @@ function Editfamily() {
       body: JSON.stringify(family),
     });
 
-    navigate.push(`/families/${family.familyId}/edit`);
+    navigate(`/families/${family.familyId}`);
   }
 
   return (
