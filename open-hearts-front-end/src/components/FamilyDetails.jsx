@@ -35,7 +35,7 @@ function FamilyDetails() {
   return (
     <div>
       <h2 style={style}>{family.name}</h2>
-      <img src={family.pic} alt={family.alias} style={style} />
+      <img style src={family.pic} alt={family.alias} style={style} />
       <div style={style}>
         <strong>Monthly Budget: ${family.monthlyBudget}</strong>
         <p>Groceries: ${family.groceries}</p>

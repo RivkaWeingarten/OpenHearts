@@ -49,6 +49,15 @@ function Editfamily() {
     navigate(`/families/${id}`);
   }
 
+    // handle delete
+    // async function handleDelete(e) {
+    //   e.preventDefault();
+  
+    //   await fetch(`http://localhost:5001/families/${family._id}`, {
+    //     method: "DELETE",
+    //   });
+    //   navigate("/families");
+    // }
   return (
     <main>
       <h1>Edit Family</h1>
@@ -244,16 +253,16 @@ function Editfamily() {
             className="form-control"
             id="other"
             name="other"
-            // placeholder="What is your estimated monthly budget for other expenses"
+            placeholder="What is your estimated monthly budget for other expenses"
           />
         </div>
         
-        <input className="btn btn-primary" type="submit" value="Edit Family" />
-        <input
+        <input className="submit-button" type="submit" value="Edit Family" />
+        {/* <input
           className="btn btn-primary"
           type="delete"
           value="delete Family"
-        />
+        /> */}
       </form>
     </main>
   );
