@@ -10,7 +10,7 @@ function SingleCreditCardForm({ family }) {
 
     const requestData = {
       donor,
-      donationAmount: parseFloat(donationAmount), // Convert to a number
+      donationAmount: parseFloat(donationAmount), 
     };
 
     try {
