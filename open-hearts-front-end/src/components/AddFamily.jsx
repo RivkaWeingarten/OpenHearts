@@ -16,11 +16,11 @@ function AddFamily() {
     phone: "",
     email: "",
     moreInfo: "",
-    monthlyBudget: "",
-    food: "",
-    rent: "",
-    utilityBills: "",
-    other: "",
+    monthlyBudget: 5000,
+    food: 1000,
+    rent: 2000,
+    utilityBills: 500,
+    other: 1500,
   });
 
   async function handleSubmit(e) {
@@ -76,7 +76,6 @@ function AddFamily() {
           />
         </div>
 
-    
         <div className="form-group">
           <label htmlFor="address1">Address 1</label>
           <input
@@ -236,7 +235,7 @@ function AddFamily() {
             placeholder="What is your estimated monthly budget for other expenses"
           />
         </div>
- 
+
         <input className="submit-button" type="submit" value="Add Family" />
       </form>
     </main>
