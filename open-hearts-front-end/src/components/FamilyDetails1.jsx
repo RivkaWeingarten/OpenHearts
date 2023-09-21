@@ -66,19 +66,20 @@ function FamilyDetails1() {
       <div className="row">
         <div className="edit-delete">
           <a
-            style={{ textDecoration: "none" }}
+            style={{ color: "maroon", textDecoration: "none" }}
             href={`/families/${family._id}/edit`}
             className="btnEditDelete"
           >
-            ✏️
+            Edit ✏️
           </a>
           <a
-            style={{ textDecoration: "none" }}
+            style={{ color: "maroon", textDecoration: "none" }}
             onClick={handleDelete}
             className="btnEditDelete"
           >
-            &#10060;
+            Delete &#10060;
           </a>
+          Only for Administrative use
         </div>
       </div>
       <div className="row">

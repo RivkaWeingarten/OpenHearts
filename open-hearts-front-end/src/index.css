@@ -199,22 +199,19 @@ form input {
   font-size: smaller;
 }
 
-.deleteCommentBtn {
-  background: white;
-  border: none;
-}
-
 .btnEditDelete {
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .edit-delete {
-  display: flex;
+  /* display: flex; */
   flex: none;
   cursor: pointer;
- 
-  /* flex-direction: row; */
+  background-color: #df93af;
+  color:maroon;
+  justify-content: right;
+
 }
 h1 {
   color: #cc4d7b;
