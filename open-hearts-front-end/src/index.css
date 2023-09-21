@@ -19,15 +19,12 @@ code {
   font-size: 1.5rem;
   height: 10vh;
   border-radius: 40px 40px 300px 300px;
-
 }
 
 .navbar ul {
   list-style-type: none;
   margin: 0;
   text-align: center;
- 
-
 }
 
 .navbar li {
@@ -48,17 +45,16 @@ code {
   text-decoration: none;
 }
 
-.total-raised{
+.total-raised {
   margin-right: 50px;
   text-align: end;
 }
 
-.navbar img{
-  width:100px;
-  
+.navbar img {
+  width: 100px;
 }
-.heart-logo{
-  width:100px;
+.heart-logo {
+  width: 100px;
   justify-content: center;
 }
 
@@ -74,7 +70,7 @@ code {
   font-weight: bolder;
   border: 0;
   border-radius: 5px;
-  width:300px;
+  width: 300px;
 }
 
 .explore-button a {
@@ -88,25 +84,25 @@ code {
 
 .submit-button {
   /* background-color: var(--primary-color); */
- color: white;
- background-color: #a407a1;
- cursor: pointer;
- display: inline-block;
- padding: 15px;
- font-family: inherit;
- font-size: 16px;
- font-weight: bolder;
- border: 0;
- border-radius: 5px;
-
+  color: white;
+  background-color: #a407a1;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 0;
+  border-radius: 5px;
+  align-items: center;
 }
-.submit-button a{
-color:white;
-text-decoration: none;
-font-size: 1.5rem;
+.submit-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 .submit-button a:hover {
- color: pink;
+  color: pink;
 }
 
 .aboutUs {
@@ -117,47 +113,55 @@ font-size: 1.5rem;
 }
 
 .family {
-width: 80vw;
-border:#340e7c solid;
-border-radius: 1%;
+  width: 80vw;
+  border: #340e7c solid;
+  border-radius: 1%;
 }
 
 .ccContainer {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .input-group {
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  margin-bottom: 20px;
 }
 
 .input-group label {
-  margin-top: 15px;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
   display: inline-block;
-  width: 150px; /* Adjust the width as needed */
+  width: 80px;
+  font-size: smaller;
 }
 
 .ccBackground {
-background-color: lavender;
+  background-color: lavender;
 }
 
 .helping-hands {
- width: 350px;
- height: auto
+  width: 350px;
+  height: auto;
 }
 
 .thank-you {
   color: #cc4d7b;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 28px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 .donation-text {
   color: #cc4d7b;
-  font-size: 23px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
   margin-right: 20px;
   margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 form {
@@ -171,9 +175,8 @@ form {
   justify-content: center;
   /* overflow: hidden; */
   background-color: rgba(184, 61, 122, 0.16);
-  box-shadow: 0 5px 10px rgba(154,160,185,0.05),
-  0 15px 40px rgba(0,0,0,0.1) ;
-
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 form label {
@@ -190,5 +193,29 @@ form input {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: smaller;
 }
 
+.deleteCommentBtn {
+  background: white;
+  border: none;
+}
+
+.btnEditDelete {
+  background: none;
+  border: none;
+  font-size: 2rem;
+}
+.edit-delete {
+  display: flex;
+  flex: none;
+  cursor: pointer;
+ 
+  /* flex-direction: row; */
+}
+h1 {
+  color: #cc4d7b;
+}

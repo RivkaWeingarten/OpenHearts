@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function CreditCardForm() {
+function SingleCreditCardForm({ family }) {
   const [donor, setDonor] = useState("");
   const [donationAmount, setDonationAmount] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [donationSubmitted, setDonationSubmitted] = useState(false); // Added state for donation confirmation
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,17 +14,20 @@ function CreditCardForm() {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/families/donate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
-      });
+      const response = await fetch(
+        `http://localhost:5001/families/${family._id}/donation`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        }
+      );
 
       if (response.ok) {
         console.log("Donation submitted successfully");
-        setIsSubmitted(true);
+        setDonationSubmitted(true); // Set donationSubmitted to true upon successful submission
       } else {
         console.error("Failed to submit donation");
       }
@@ -38,7 +41,11 @@ function CreditCardForm() {
 
   return (
     <div className="ccBackground">
-      {!isSubmitted ? (
+      {donationSubmitted ? ( // Render confirmation message if donationSubmitted is true
+        <div>
+          <p>Your gift has been received.</p>
+        </div>
+      ) : (
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6">
@@ -87,6 +94,7 @@ function CreditCardForm() {
               </div>
             </div>
           </div>
+
           <div className="row">
             <div className="col-md-6">
               <div className="input-group">
@@ -128,6 +136,7 @@ function CreditCardForm() {
               placeholder="123 Main St"
             />
           </div>
+
           <div className="row">
             <div className="col-md-6">
               <div className="input-group">
@@ -162,13 +171,9 @@ function CreditCardForm() {
             </button>
           </div>
         </form>
-      ) : (
-        <div className="confirmation-message">
-          Your gift has been received.
-        </div>
       )}
     </div>
   );
 }
 
-export default CreditCardForm;
+export default SingleCreditCardForm;

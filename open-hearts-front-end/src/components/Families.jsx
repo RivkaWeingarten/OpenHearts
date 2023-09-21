@@ -30,9 +30,7 @@ function Families() {
     let totalDonation = Math.round(sumDonations);
 
     let donation = (
-      <p style={{ color: "purple" }}>
-        ${totalDonation} raised for this family
-      </p>
+      <p style={{ color: "purple" }}>${totalDonation} raised for this family</p>
     );
     //
     return (
@@ -55,6 +53,7 @@ function Families() {
             <li>Other: ${family.other}</li>
           </ul>
           {/* <p>{family.moreInfo}</p> */}
+
           <Link to={`/families/${family._id}`} key={family._id}>
             <button>Donate Now</button>
           </Link>
