@@ -115,6 +115,11 @@ code {
   padding: 10%;
 }
 
+.mission {
+margin-top: 20px;
+font-size: x-large
+}
+
 .family {
   width: 80vw;
   border: #340e7c solid;
