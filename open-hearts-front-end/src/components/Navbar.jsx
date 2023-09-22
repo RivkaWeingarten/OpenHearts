@@ -11,7 +11,7 @@ function Navbar() {
     fetch("http://localhost:5001/families/fetchtotaldonationamount")
       .then((response) => response.json())
       .then((data) => {
-        setTotalDonationAmount(data.totalDonationAmount);
+        setTotalDonationAmount(Math.round(data.totalDonationAmount));
       })
       .catch((error) => {
         console.error("Error fetching total donation amount:", error);
