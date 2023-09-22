@@ -32,41 +32,40 @@ API (http://localhost:5001/families)
 |POST      |/donate                                |Divide donation equally among families
 
 App (http://localhost:3000)
-Path Component
-/ Home.jsx
-/families Families.jsx
-donations Donations.jsx
-families/new AddFamily.jsx
-families/:id FamilyDetails1.jsx
-families/id/edit EditFamily.jsx
-
-- Error404.jsx
-  ![image](https://github.com/RivkaWeingarten/OpenHearts/assets/126045006/cd39bf90-8a24-41c2-89f3-06f996cfbac7)
+|       Path       |      Component     | Purpose                    |
+|:----------------:|:------------------:|----------------------------|
+| /                | Home.jsx           | Home Page                  |
+| /families        | Families.jsx       | List of Families           |
+| donations        | Donations.jsx      | Donations for all families |
+| families/new     | AddFamily.jsx      | add a family               |
+| families/:id     | FamilyDetails1.jsx | see details of a family    |
+| families/id/edit | EditFamily.jsx     | edit a family              |
+| *                | Error404.jsx       | error page                 |
 
 Families Schema
+| name          | String,       |
+|---------------|---------------|
+| alias         | String,       |
+| address1      | String,       |
+| address2      | String,       |
+| city          | String,       |
+| state         | String,       |
+| zip           | String,       |
+| phone         | String,       |
+| email         | String,       |
+| moreInfo      | String,       |
+| monthlyBudget | Number,       |
+| food          | Number,       |
+| rent          | Number,       |
+| utilityBills  | Number,       |
+| other         | Number,       |
+| donations     | foreign table |
 
-alias String, required
-  address1 String, required
-  address2 String, required
-  city String, default
-  state String, default
-  zip String, default
-  phone String, default
-  email String, default
-  moreInfo String, default
-  monthlyBudget Number, default
-  food Number, default
-  rent Number, default
-  utilityBills Number, default
-  other Number, default
-  donations mongoose.Schema.Types.ObjectId, ref
-
-Donations Schema
-
-    donor	 String, default
-
-donationAmount Number, default
-  rentAmount Number, default
-  foodAmount Number, default
-  utilityBillsAmount Number, default
-  otherAmount Number, default
+name               | type          |
+|--------------------|---------------|
+| donor              | String,       |
+| donationAmount     | Number,       |
+| rentAmount         | Number,       |
+| foodAmount         | Number,       |
+| utilityBillsAmount | Number,       |
+| otherAmount        | Number,       |
