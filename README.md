@@ -17,17 +17,19 @@ Node Modules: method-override, dotenv, express-react-views, react, cors, body-pa
 Routes used.
 
 API (http://localhost:5001/families)
-Method Path Purpose
-GET / Home page
-GET / Index page of families
-POST / add a new family
-GET "/:id" Details about a particular family
-PUT "/:id" Update a particular family
-DELETE "/:id" Delete a particular family
-POST /:id/donation Add donation
-DELETE /:id/donation/:donationId Delete a donation (needed when deleting family)
-GET /fetchtotaldonationamount aggregate all donations
-POST /donate Divide donation equally among families
+| Method   | Path                                  | Purpose                                   |
+| ------   | ------------------------------------  | ----------------------------------------- |
+|DELETE    |/:id/donation/:donationId              |Divide donation equally among families
+|GET       |/                                      |Home page
+|GET       |/                                      |Index page of families
+|POST      |/                                      |add a new family
+|GET       |"/:id"                                 |Details about a particular family
+|PUT       |"/:id"                                 |Update a particular family
+|DELETE    |"/:id"                                 |Delete a particular family
+|POST      |/:id/donation                          |Add donation
+|DELETE    |/:id/donation/:donationId              |Delete a donation (needed when deleting family)
+|GET       |/fetchtotaldonationamount              |aggregate all donations
+|POST      |/donate                                |Divide donation equally among families
 
 App (http://localhost:3000)
 Path Component
