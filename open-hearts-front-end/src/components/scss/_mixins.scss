@@ -1,0 +1,45 @@
+@import 'variables';
+
+@mixin text-decoration-none{
+    text-decoration:none
+}
+@mixin flex-and-align-center{
+    display:flex;
+    align-items: center;
+
+}
+
+@mixin pink-button {
+    a {
+      color: white;
+      @include text-decoration-none;
+      font-size: 1.5 rem;
+    }
+    &:hover {
+      color: $hover-pink-color;
+    }
+    color: white;
+    background-color: $secondary-color;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bolder;
+    border: 0;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  @mixin border-border-radius($border, $border-radius){
+    border: $border ;
+    border-radius:$border-radius;
+}
+
+@mixin margin-function ($margin-top, $margin-bottom, $margin-right, $margin-left){
+
+           margin-top: $margin-top;
+            margin-bottom: $margin-bottom;
+            margin-right: $margin-right;
+            margin-left: $margin-left;}

@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@import "variables";
+@import "mixins";
+@import "functions";
+
 .families-container {
-  display: flex;
-  align-items: center;
+  @include flex-and-align-center;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -11,43 +14,46 @@
   font-family: 'Poppins', sans-serif;
    margin: 0;
 }  */
+
 .show-families {
-  display: flex;
-  align-items: center;
+ 
+  @include flex-and-align-center;
   width: 300px;
   margin: 1rem;
-  background-color: #5709ab;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  background-color: $primary-color;
+  box-shadow: $box-shadow;
   position: relative;
   overflow: hidden;
   border-radius: 3px;
 }
-
-.show-families img {
-  width: 100%;
+.show-families {
+  img {
+    width: 100%;
+  }
 }
-
 .family-info {
   color: white;
-  display: flex;
-  align-items: center;
+  @include flex-and-align-center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
 
-.family-info a {
-  color: lightpink;
-  text-decoration: none;
+.family-info {
+  a {
+    color: lightpink;
+    @include text-decoration-none;
+  }
 }
 
-.place-info h3 {
-  margin-top: 0;
+.place-info {
+  h3 {
+    margin-top: 0;
+  }
 }
-
 .description-family {
   background-color: white;
-  padding: 2rem;
+  padding: double(1rem);
   text-align: right;
   position: absolute;
   left: 0;
@@ -56,33 +62,39 @@
   max-height: 100%;
   transform: translateY(101%);
   transition: transform 0.3s ease-in;
-}
-.description-family li {
-  list-style-type: none;
-  align-items: right;
+  li {
+    list-style-type: none;
+    align-items: right;
+  }
 }
 
-.show-families:hover .description-family {
-  transform: translateY(0);
+
+
+.show-families {
+  &:hover {
+    .description-family {
+      transform: translateY(0);
+    }
+  }
 }
 
 button {
   color: white;
-  background-color: #a407a1;
+  background-color: $secondary-color;
   cursor: pointer;
   display: inline-block;
   width: 100%;
   padding: 15px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: double(8px);
   font-weight: bolder;
   border: 0;
-  border-radius: 5px;
+  border-radius: halve(10px);
 }
 
-button a {
-  color: white;
-  text-decoration: none;
+button {
+  a {
+    color: white;
+    @include text-decoration-none;
+  }
 }
-
-/*# sourceMappingURL=families.css.map */

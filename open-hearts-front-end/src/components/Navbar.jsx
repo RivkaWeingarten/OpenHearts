@@ -1,6 +1,6 @@
 // import "./App.css"
 import heartLogo from "../images/twohearts.png";
-
+import
 import React, { useEffect, useState } from "react";
 
 function Navbar() {

@@ -1,0 +1,19 @@
+@function double($size){
+    @return $size *2
+};
+
+@function halve($size){
+    @return $size *.5
+};
+@function margin-function ($margin-top, $margin-bottom, $margin-right, $margin-left){
+
+
+    // @return margin-top= $margin-top,
+    //         margin-bottom= $margin-bottom,
+    //         margin-right= $margin-right,
+    //         margin-left= $margin-left,
+    @return $margin-top,$margin-bottom, $margin-right,$margin-left
+};
+@function margin-all($px){
+    
+}

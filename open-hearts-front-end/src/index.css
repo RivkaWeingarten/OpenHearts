@@ -1,65 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.navbar {
-  background-image: linear-gradient(#340e7c, rgb(81, 20, 155));
-  color: lightgrey;
-  text-align: center;
-  font-size: 1.5rem;
-  height: 10vh;
-  border-radius: 40px 40px 300px 300px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  text-align: center;
-}
-
-.navbar li {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 25px;
-}
-
-.navbar a {
-  color: white;
-  font-size: 1.5em;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  color: pink;
-  text-decoration: none;
-}
-
-.total-raised {
-  margin-right: 50px;
-  text-align: end;
-}
-
-.navbar img {
-  width: 100px;
-}
-.heart-logo {
-  width: 100px;
-  justify-content: center;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .explore-button {
-  /* background-color: var(--primary-color); */
   color: white;
   background-color: #a407a1;
   cursor: pointer;
@@ -70,20 +20,20 @@ code {
   font-weight: bolder;
   border: 0;
   border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
   width: 300px;
 }
-
 .explore-button a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.5 rem;
 }
-.explore-button a:hover {
+.explore-button:hover {
   color: pink;
 }
 
 .submit-button {
-  /* background-color: var(--primary-color); */
   color: white;
   background-color: #a407a1;
   cursor: pointer;
@@ -97,14 +47,12 @@ code {
   margin: auto;
   margin-top: 20px;
 }
-
 .submit-button a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.5 rem;
 }
-
-.submit-button a:hover {
+.submit-button:hover {
   color: pink;
 }
 
@@ -116,8 +64,8 @@ code {
 }
 
 .mission {
-margin-top: 20px;
-font-size: x-large
+  margin-top: 20px;
+  font-size: x-large;
 }
 
 .family {
@@ -176,17 +124,14 @@ form {
   max-width: 700px;
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   justify-content: center;
-  /* overflow: hidden; */
   background-color: rgba(184, 61, 122, 0.16);
-  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-    0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 4px 5px rgba(0, 0, 0, 0.2);
 }
-
 form label {
   position: relative;
   padding: 5px;
@@ -217,16 +162,15 @@ form input {
 
 .editDelete {
   display: flex;
-  justify-content: right; 
+  justify-content: right;
   margin-right: 20px;
   margin-top: 20px;
 }
 
-.edit-delete  span {
-  /* display: flex; */
+.edit-delete span {
   flex: none;
   cursor: pointer;
-  color:maroon;
+  color: maroon;
   border: 2px solid maroon;
   padding: 3px;
   margin: 3px;
@@ -242,7 +186,7 @@ h1 {
   text-align: left;
 }
 
-.col-sm-6 img{ 
+.col-sm-6 img {
   margin: 40px;
   margin-left: 250px;
 }
@@ -250,3 +194,5 @@ h1 {
 .location {
   margin-left: 100px;
 }
+
+/*# sourceMappingURL=index.css.map */

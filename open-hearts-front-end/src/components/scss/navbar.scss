@@ -1,0 +1,158 @@
+@import "variables";
+@import "mixins";
+
+.navbar1 {
+  background-image: linear-gradient(#340e7c, rgb(120, 39, 218));
+  color: lightgrey;
+  text-align: center;
+  font-size: 1.5rem;
+  height: 10vh;
+  border-radius: 40px 40px 300px 300px;
+}
+
+.navbar1 {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    li {
+      @include flex-and-align-center;
+      justify-content: center;
+      margin-right: $twentyfivepx;
+    }
+  }
+}
+
+.navbar1 a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  &:hover {
+    color: $hover-pink-color;
+    @include text-decoration-none;
+  }
+}
+
+.total-raised {
+  margin-right: 50px;
+  text-align: end;
+}
+
+.navbar1 {
+  img {
+    width: 100px;
+  }
+}
+.heart-logo {
+  width: 100px;
+  justify-content: center;
+}
+.menu {
+  display: none;
+}
+.menu.active {
+  display: block;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Style for bars in the hamburger icon */
+.menu-icon {
+  .bar {
+    width: $twentyfivepx;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+}
+
+/* Rotate bars for active (open) menu */
+.menu-icon {
+  .active {
+    .bar {
+      &:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+    }
+  }
+}
+
+.menu-icon
+.active {
+    .bar{
+        &:nth-child(2) {
+            opacity: 0;
+          }
+
+    }
+}
+
+
+.menu-icon{
+.active {
+
+.bar
+&:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}}}
+.close-icon {
+  font-size: $twentyfivepx;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+}
+
+
+.close-icon {
+  display: none;
+}
+
+
+.menu-icon.active .close-icon {
+  display: block;
+}
+.menu-and-total-raised {
+  @include flex-and-align-center; /* Vertically align menu and Total raised */
+  justify-content: space-between; /* Add space between menu and Total raised */
+}
+
+/* Hide the "Total raised" section when the menu is active */
+.menu-and-total-raised .activeTotalRaised {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar1 li {
+    float: none;
+    width: 100%;
+    text-align: right;
+  }
+
+  .navbar1 li a {
+    padding: 10px 0;
+    display: block;
+    color: black;
+    font-size: small;
+  }
+
+  .navbar1 ul {
+    background-color:$secondary-color $box-shadow;
+    text-align: right;
+    position:absolute;
+    z-index: 5;
+  }
+  .menu-and-total-raised.activeTotalRaised {
+    background-color: white;
+    color: rgb(216, 52, 52);
+    font-size: small;
+    width: 100%;
+  }
+}
