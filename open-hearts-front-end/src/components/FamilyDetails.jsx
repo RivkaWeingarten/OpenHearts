@@ -10,7 +10,7 @@ function FamilyDetails() {
     console.log('ID parameter:', id); // Log the value of id
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/families/${id}`);
+        const res = await fetch(`${process.env.REACT_APP_SERVER_URL}families/${id}`);
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }

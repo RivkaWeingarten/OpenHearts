@@ -27,7 +27,7 @@ function Editfamily() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `http://localhost:5001/families/${id}`
+        `${process.env.REACT_APP_SERVER_URL}families/${id}`
       );
       const resData = await response.json();
       setFamily(resData);
@@ -38,7 +38,7 @@ function Editfamily() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5001/families/${id}`, {
+    await fetch(`${process.env.REACT_APP_SERVER_URL}families/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

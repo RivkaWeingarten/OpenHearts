@@ -16,7 +16,7 @@ Node Modules: method-override, dotenv, express-react-views, react, cors, body-pa
 
 Routes used.
 
-API (http://localhost:5001/families)
+API (${process.env.REACT_APP_SERVER_URL}families)
 | Method   | Path                                  | Purpose                                   |
 | ------   | ------------------------------------  | ----------------------------------------- |
 |DELETE    |/:id/donation/:donationId              |Divide donation equally among families

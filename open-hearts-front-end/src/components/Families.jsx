@@ -1,13 +1,16 @@
 import "../families.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+// require("dotenv").config();
 
 function Families() {
   const [families, setFamilies] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5001/families");
+      
+      const res = await fetch(`${process.env.REACT_APP_SERVER_URL}families`);
+      // const res = await fetch(`http://localhost:5001/api/families`);
       const resData = await res.json();
       setFamilies(resData);
     };
@@ -15,15 +18,7 @@ function Families() {
   }, []);
 
   let familiesFormatted = families.map((family) => {
-    // async function handleDelete(e) {
-    //   e.preventDefault();
-
-    //   await fetch(`http://localhost:5000/families/${family._id}`, {
-    //     method: "DELETE",
-    //   });
-    //   navigate("/families");
-    // }
-
+  
     let sumDonations = family.donations.reduce((tot, c) => {
       return tot + c.donationAmount;
     }, 0);

@@ -26,7 +26,7 @@ function AddFamily() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`http://localhost:5001/families`, {
+    await fetch(`${process.env.REACT_APP_SERVER_URL}families`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

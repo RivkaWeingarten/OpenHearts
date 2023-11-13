@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const { ObjectId } = require('mongodb');
 require("dotenv").config();
 let familySchema = new mongoose.Schema({
+//  _id:{type:mongoose.Schema.Types.ObjectId},
   name: { type: String, required: false },
   pic: {
     type: String,
@@ -23,6 +25,7 @@ let familySchema = new mongoose.Schema({
   other: { type: Number, default: 0 },
   donations: [{ type: mongoose.Schema.Types.ObjectId, ref: "Donation" }],
 });
+
 
 
 module.exports = mongoose.model("Family", familySchema);

@@ -15,7 +15,7 @@ function SingleCreditCardForm({ family }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5001/families/${family._id}/donation`,
+        `${process.env.REACT_APP_SERVER_URL}families/${family._id}/donation`,
         {
           method: "POST",
           headers: {
