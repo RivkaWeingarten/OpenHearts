@@ -11,6 +11,7 @@ import Editfamily from "./components/EditFamily";
 import "./App.css";
 import "./index.css";
 import "./families.css";
+import "./navbar.css";
 
 function App() {
   return (
