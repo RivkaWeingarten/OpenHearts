@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function SingleCreditCardForm({ family }) {
   const [donor, setDonor] = useState("");
   const [donationAmount, setDonationAmount] = useState("");
   const [donationSubmitted, setDonationSubmitted] = useState(false); // Added state for donation confirmation
-
+  // const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,7 +29,8 @@ function SingleCreditCardForm({ family }) {
 
       if (response.ok) {
         console.log("Donation submitted successfully");
-        setDonationSubmitted(true); // Set donationSubmitted to true upon successful submission
+        setDonationSubmitted(true); 
+       
       } else {
         console.error("Failed to submit donation");
       }
@@ -43,7 +46,7 @@ function SingleCreditCardForm({ family }) {
     <div className="ccBackground">
       {donationSubmitted ? ( // Render confirmation message if donationSubmitted is true
         <div>
-          <p>Your gift has been received.</p>
+          <p>Your gift of {donationAmount} has been received.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
