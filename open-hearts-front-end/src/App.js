@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Families from "./components/Families";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -16,17 +16,18 @@ import "./navbar.css";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/">
+      <BrowserRouter >
 
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="families" element={<Families />} />
-          <Route path="donations" element={<Donations />} />
-          <Route path="families/new" element={<AddFamily />} />
-          <Route path="families/:id" element={<FamilyDetails1 />} />
-          <Route path="families/:id/edit" element={<Editfamily />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="/" element={<Home />} ></Route>
+         <Route path="/families" element={<Families />} ></Route>
+          <Route path="/donations" element={<Donations />} ></Route>
+          <Route path="/families/new" element={<AddFamily />} ></Route>
+          <Route path="/families/:id" element={<FamilyDetails1 />} ></Route>
+          <Route path="/families/:id/edit" element={<Editfamily />} ></Route>
+          <Route path="*" element={<Error404 />} ></Route>
+          
         </Routes>
         {/* <Switch>
           <Route exact path="/" component={Home} />
@@ -43,3 +44,4 @@ function App() {
 }
 
 export default App;
+
