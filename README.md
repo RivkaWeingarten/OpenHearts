@@ -20,13 +20,12 @@ Node Modules: method-override, dotenv, express-react-views, react, cors, body-pa
 
 Routes used.
 
-API (${process.env.REACT_APP_SERVER_URL}families)
+API(${process.env.REACT_APP_SERVER_URL}families)
 | Method   | Path                                  | Purpose                                   |
 | ------   | ------------------------------------  | ----------------------------------------- |
-
 |GET       |/                                      |Home page
-|GET       |/                                      |Index page of families
-|POST      |/                                      |add a new family
+|GET       |/families                              |Index page of families
+|POST      |/families/new                          |add a new family
 |GET       |"/:id"                                 |Details about a particular family
 |PUT       |"/:id"                                 |Update a particular family
 |DELETE    |"/:id"                                 |Delete a particular family
