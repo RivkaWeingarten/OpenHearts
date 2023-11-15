@@ -63,9 +63,9 @@ function Navbar() {
 
       <div className="menu-and-total-raised">
         {" "}
-        {/* Container for menu and Total raised */}
+   
         <ul className={`menu ${isMobile ? "activeTotalRaised" : ""}`}>
-          {/* Menu items */}
+        
         </ul>
         <p className="total-raised">
           <span>Total raised ${totalDonationAmount}</span>
