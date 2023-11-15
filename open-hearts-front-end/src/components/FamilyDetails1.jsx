@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import SingleCreditCardForm from "./SingleCreditCardForm";
 function FamilyDetails1() {
   const navigate = useNavigate();
@@ -65,14 +65,13 @@ function FamilyDetails1() {
     <main>
       <div className="editDelete">
         <div className="edit-delete">
-        <a style={{color:"maroon"}}> For administrative use only! </a>
-          <a
-            style={{ color: "maroon", textDecoration: "none" }}
-            href={`/families/${family._id}/edit`}
-            className="btnEditDelete"
-          >
+        <p style={{color:"maroon"}}> For administrative use only! </p>
+          <Link to ={`/families/${family._id}/edit`} style={{ color: "maroon", textDecoration: "none" }} className="btnEditDelete">
+           
+                   
+          
             <span> Edit ✏️ </span>
-          </a>
+            </Link>
           <a
             style={{ color: "maroon", textDecoration: "none" }}
             onClick={handleDelete}

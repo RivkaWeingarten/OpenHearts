@@ -11,13 +11,18 @@ app.use(bodyParser.json());
 // serve static front end in production mode
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, 'public', 'build')));
+
 }
 
 app.use("/api/families", require("./controllers/families"));
 
-app.get("/", (req, res) => {
-  res.send("Open Hearts!");
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/build', 'index.html'));
 });
+
+// app.get("/", (req, res) => {
+//   res.send("Open Hearts!");
+// });
 
 app.get("*", (req, res) => {
   res.status(404).send("<h1>404 Page</h1>");

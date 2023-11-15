@@ -23,7 +23,7 @@ Routes used.
 API (${process.env.REACT_APP_SERVER_URL}families)
 | Method   | Path                                  | Purpose                                   |
 | ------   | ------------------------------------  | ----------------------------------------- |
-|DELETE    |/:id/donation/:donationId              |Divide donation equally among families
+
 |GET       |/                                      |Home page
 |GET       |/                                      |Index page of families
 |POST      |/                                      |add a new family
